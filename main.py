@@ -1,31 +1,25 @@
 from collections import deque
 
-str_1 = "AaBbCcDd"
+# Реализация списка на языке Python
 
-li_1 = []
-li_2 = []
+li = list()
 
-stack_1 = deque()
-stack_2 = deque()
+li.append(1)
+li.append(2)
+li.append(3)
 
-for letter in str_1:
-    if (letter.isupper()):
-        li_1.append(letter)
-        stack_1.append(letter)
-    else: 
-        li_2.append(letter)
-        stack_2.append(letter)
+print(li[1]) # должно вывести 2, то есть можно получить доступ не только к последнему элементу в отличие от стэка
 
 
-print(*li_1, end="\n\n")
-print(*li_2, end="\n\n")
+# Реализация стека на языке Python
 
-while len(stack_1) != 0:
-    print(stack_1.pop(), end=" ")
-print("\n")
+stack = deque()
 
-while len(stack_2) != 0:
-    print(stack_2.pop(), end=" ")
-print("\n")
+stack.append(1)
+stack.append(2)
+stack.append(3)
+    
 
-
+print("Кол-во до удаления: " + len(stack))
+print(stack.pop()) # должно вывести 3 а тажке кол-во елементов должно стать равным двум
+print("Кол-во после удаления: " + len(stack))
