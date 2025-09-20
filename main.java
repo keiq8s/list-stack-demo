@@ -1,39 +1,26 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
-        String str_1 = "AaBbCcDd";
+        // Реализация списка на языке Java
+        ArrayList<Integer> li = new ArrayList<>();
 
-        List<Character> li_1 = new ArrayList<>();
-        List<Character> li_2 = new ArrayList<>();
+        li.add(1);
+        li.add(2);
+        li.add(3);
 
-        Deque<Character> stack_1 = new ArrayDeque<>();
-        Deque<Character> stack_2 = new ArrayDeque<>();
+        System.out.println(li.get(1)); // должно вывести 2, то есть можно получить доступ не только к последнему элементу в отличие от стэка
 
-        for (char letter : str_1.toCharArray()) {
-            if (Character.isUpperCase(letter)) {
-                li_1.add(letter);
-                stack_1.push(letter);
-            } else {
-                li_2.add(letter);
-                stack_2.push(letter);
-            }
-        }
+        // Реализация стека на языке Java
+        Stack<Integer> stack = new Stack<>();
 
-        for (char c : li_1) System.out.print(c + " ");
-        System.out.println("\n");
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
 
-        for (char c : li_2) System.out.print(c + " ");
-        System.out.println("\n");
-
-        while (!stack_1.isEmpty()) {
-            System.out.print(stack_1.pop() + " ");
-        }
-        System.out.println("\n");
-
-        while (!stack_2.isEmpty()) {
-            System.out.print(stack_2.pop() + " ");
-        }
-        System.out.println();
+        System.out.println("Кол-во до удаления: " + stack.size());
+        System.out.println(stack.pop()); // должно вывести 3 а также кол-во элементов должно стать равным двум
+        System.out.println("Кол-во после удаления: " + stack.size());
     }
 }
