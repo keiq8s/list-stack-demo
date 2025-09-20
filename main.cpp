@@ -1,44 +1,29 @@
 #include <iostream>
-#include <list>
+#include <vector>
 #include <stack>
-#include <cctype>
+using namespace std;
 
 int main() {
-    std::string str_1 = "AaBbCcDd";
+    // Реализация списка на языке C++
+    vector<int> li;
 
-    std::list<char> li_1;
-    std::list<char> li_2;
+    li.push_back(1);
+    li.push_back(2);
+    li.push_back(3);
 
-    std::stack<char> stack_1;
-    std::stack<char> stack_2;
+    cout << li[1] << endl; // должно вывести 2, то есть можно получить доступ не только к последнему элементу в отличие от стэка
 
-    for (char letter : str_1) {
-        if (std::isupper(letter)) {
-            li_1.push_back(letter);
-            stack_1.push(letter);
-        } else {
-            li_2.push_back(letter);
-            stack_2.push(letter);
-        }
-    }
+    // Реализация стека на языке C++
+    stack<int> st;
 
-    for (char c : li_1) std::cout << c << " ";
-    std::cout << "\n\n";
+    st.push(1);
+    st.push(2);
+    st.push(3);
 
-    for (char c : li_2) std::cout << c << " ";
-    std::cout << "\n\n";
-
-    while (!stack_1.empty()) {
-        std::cout << stack_1.top() << " ";
-        stack_1.pop();
-    }
-    std::cout << "\n\n";
-
-    while (!stack_2.empty()) {
-        std::cout << stack_2.top() << " ";
-        stack_2.pop();
-    }
-    std::cout << "\n";
+    cout << "Кол-во до удаления: " << st.size() << endl;
+    cout << st.top() << endl; // должно вывести 3
+    st.pop(); // также кол-во элементов должно стать равным двум
+    cout << "Кол-во после удаления: " << st.size() << endl;
 
     return 0;
 }
